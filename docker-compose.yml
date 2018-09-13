@@ -3,11 +3,11 @@ services:
   setup:
     build: .
     depends_on:
-    - db
+    - postgres
     environment:
     - RAILS_ENV=development
     command: "bin/rails db:migrate"
-  db:
+  postgres:
     image: postgres:9.6-alpine
     environment:
     - POSTGRES_USER=postgres
@@ -27,7 +27,7 @@ services:
     build: .
     depends_on:
     - redis
-    - db
+    - postgres
     - setup
     command: bundle exec rails s -p 4000 -b '0.0.0.0'
     environment:
