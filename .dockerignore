@@ -1,2 +1,5 @@
-tmp/*
-log/*
+/log/*
+/tmp/*
+
+# Ignore RubyMine files
+.idea
