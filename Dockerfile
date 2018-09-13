@@ -17,7 +17,3 @@ ADD Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 
 ADD . /myapp
-
-COPY docker-entrypoint.sh /usr/local/bin
-
-ENTRYPOINT ["docker-entrypoint.sh"]
